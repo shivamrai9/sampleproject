@@ -33,42 +33,7 @@ export const Navbar = () => {
 						</svg>
 					</button>
 				</div>
-				{/* <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
-					<li><Link className="text-sm text-gray-400 hover:text-blue-600 font-bold" to="/login">Home</Link></li>
-					<li className="text-gray-300 ">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" className="w-4 h-4 current-fill" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
-						</svg>
-					</li>
-					<li><Link className="text-sm  font-bold" to='/createuser'>About Us</Link></li>
-				</ul> */}
-				{/* <form className="hidden lg:flex lg:items-center lg:w-auto lg:space-x-6 lg:ml-auto">
-
-						<input
-							type="text"
-							placeholder="Search"
-							className="border-2 border-gray-300 rounded-md py-1 px-2"
-						/>
-						<button className='flex flex-col justify-center m-0'>
-							<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" /></svg>
-						</button>
-					</form> */}
 				<div className='hidden lg:inline-block '>
-					{
-						(localStorage.getItem('authToken')) ?
-							<>
-								<div className="relative hidden lg:inline-block lg:mr-3" onClick={()=>{setCartView(!cartView)}}>
-									<div className="py-2 px-6 bg-green-400 hover:bg-gray-200 text-sm text-gray-900 font-bold rounded-xl transition duration-200" to="/login">
-										Cart
-									</div>
-									<span className="absolute top-[-10px] right-[-5px] bg-red-500 rounded-full px-2 py-1 text-white text-xs font-bold">
-										1
-									</span>
-								</div>
-								<Link className="hidden lg:inline-block lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-200 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" to="/login">My Order</Link>
-							</>
-							: ""
-					}
 					{
 						(!localStorage.getItem('authToken')) ?
 							<>
@@ -121,7 +86,7 @@ export const Navbar = () => {
 							<Link className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" to='/createuser'>Sign Up</Link>
 						</div>
 						<p className="my-4 text-xs text-center text-gray-400">
-							<span>Copyright © 2021</span>
+							<span>Copyright © shivam</span>
 						</p>
 					</div>
 				</nav>

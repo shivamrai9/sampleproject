@@ -10,6 +10,11 @@ const userSchema = new Schema({
     required: true,
     unique: true,
   },
+  email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
   password: {
     type: String,
     required: true,
@@ -31,7 +36,7 @@ const userSchema = new Schema({
 });
 
 // Create a Mongoose model based on the schema
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 // Export the User model
 export default User;

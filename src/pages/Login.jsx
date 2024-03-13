@@ -15,7 +15,7 @@ export default function Login() {
 
     try {
       // Make a request to your authentication API endpoint
-      const response = await fetch('http://localhost:5000/api/loginuser', {
+      const response = await fetch('http://localhost:5000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

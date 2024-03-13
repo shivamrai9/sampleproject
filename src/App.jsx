@@ -9,7 +9,6 @@ function App() {
   return (
     <>
      <Router>
-     {/* K164PHrf9AA1v2qv */}
         <div>
           <Routes>
           <Route exact path='/' element={<Navbar />} />
