@@ -11,17 +11,15 @@ function App() {
 
   return (
     <>
+    <Navbar />
      <Router>
-        <div>
           <Routes>
-          {/* <Route exact path='/' element={<Navbar />} /> */}
           <Route exact path='/' element={<Home />} />
           <Route exact path='/addchatbot' element={<ChatBotForm />} />
           <Route exact path='/addchatbot/register' element={<RegisterForm />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />
           </Routes>
-        </div>
       </Router>
     </>
   )

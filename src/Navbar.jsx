@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import cmplogo from '../src/images/brandlogo.svg'
 export const Navbar = () => {
 	const [isMenuOpen, setMenuOpen] = useState(false);
-	const navigate = useNavigate()
+	// const navigate = useNavigate()
 
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen);
@@ -143,7 +143,7 @@ export const Navbar = () => {
 					</div>
 				</div>
 			</div> */}
-			<div className="navbar bg-gradient-to-r from-pink-500 to-orange-500 fixed top-0 z-50 text-white shadow md:px-12 ">
+			<div className="navbar bg-gradient-to-r from-pink-500 to-orange-300 fixed top-0 z-50 text-white shadow md:px-12 ">
 				<div className="navbar-center">
 					{/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
 					<div className="avatar me-10">
