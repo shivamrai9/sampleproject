@@ -21,11 +21,10 @@ const ChatBotForm = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 ">
-        <div className='h-24'></div>
+      <div className="container mx-auto mt-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold mb-2">Create a new chatbot</h2>
-          <p className="mb-1">A repository contains all project files, including the revision history. Already have a project repository elsewhere? <span className='btn btn-link btn-xs p-0 text-slate-50'> Import a repository.</span></p>
+          <p className="mb-1 font-semibold">A repository contains all project files, including the revision history. Already have a project repository elsewhere? <span className='btn btn-link btn-xs p-0 '> Import a repository.</span></p>
           <hr className="border-b  mb-4"></hr>
           <form onSubmit={handleSubmit}>
             <div className="mb-6">

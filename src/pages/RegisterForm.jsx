@@ -22,22 +22,24 @@ const RegisterForm = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8 min-h-screen pt-32">
-        <div className="max-w-md mx-auto">
-          <h2 className="text-2xl font-semibold mb-6">Create a new chatbot</h2>
+      <div className="container mx-auto px-4 py-8 min-h-screen">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-6">Register</h2>
+          <p className="mb-1 font-semibold">A repository contains all project files, including the revision history. Already have a project repository elsewhere? <span className='btn btn-link btn-xs p-0 '> Import a repository.</span></p>
+          <hr className="border-b  mb-4"></hr>
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
                 htmlFor="chatbotName"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-base font-medium text-gray-700 mb-2"
               >
-                Chatbot name
+                Full name
               </label>
               <input
                 type="text"
                 id="chatbotName"
                 name="chatbotName"
-                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full py-2 px-3 text-sm text-gray-700 outline-none"
+                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-1 px-3 mb-1 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.chatbotName}
                 required
@@ -45,24 +47,77 @@ const RegisterForm = () => {
             </div>
             <div className="mb-6">
               <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                htmlFor="chatbotName"
+                className="block text-base font-medium text-gray-700 mb-2"
               >
-                Description
+                Email
               </label>
-              <textarea
-                id="description"
-                name="description"
-                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full py-2 px-3 text-sm text-gray-700 outline-none"
+              <input
+                type="text"
+                id="chatbotName"
+                name="chatbotName"
+                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-1 px-3 mb-1 text-base text-gray-700 outline-none"
                 onChange={handleChange}
-                value={formData.description}
+                value={formData.chatbotName}
                 required
               />
             </div>
             <div className="mb-6">
               <label
+                htmlFor="chatbotName"
+                className="block text-base font-medium text-gray-700 mb-2"
+              >
+                Phone
+              </label>
+              <input
+                type="text"
+                id="chatbotName"
+                name="chatbotName"
+                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-1 px-3 mb-1 text-base text-gray-700 outline-none"
+                onChange={handleChange}
+                value={formData.chatbotName}
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="chatbotName"
+                className="block text-base font-medium text-gray-700 mb-2"
+              >
+                Password
+              </label>
+              <input
+                type="text"
+                id="chatbotName"
+                name="chatbotName"
+                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-1 px-3 mb-1 text-base text-gray-700 outline-none"
+                onChange={handleChange}
+                value={formData.chatbotName}
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="chatbotName"
+                className="block text-base font-medium text-gray-700 mb-2"
+              >
+               Confirm Password
+              </label>
+              <input
+                type="text"
+                id="chatbotName"
+                name="chatbotName"
+                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-1 px-3 mb-1 text-base text-gray-700 outline-none"
+                onChange={handleChange}
+                value={formData.chatbotName}
+                required
+              />
+            </div>
+            <hr className="border-b  mb-4"></hr>
+            <div className="mb-6">
+              <label
                 htmlFor="companyName"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-base font-medium text-gray-700 mb-2"
               >
                 Company name
               </label>
@@ -70,7 +125,7 @@ const RegisterForm = () => {
                 type="text"
                 id="companyName"
                 name="companyName"
-                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full py-2 px-3 text-sm text-gray-700 outline-none"
+                className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-1 px-3 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.companyName}
                 required
@@ -79,7 +134,7 @@ const RegisterForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="companyWebsiteUrl"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-base font-medium text-gray-700 mb-2"
               >
                 Company website URL
               </label>
@@ -87,16 +142,17 @@ const RegisterForm = () => {
                 type="url"
                 id="companyWebsiteUrl"
                 name="companyWebsiteUrl"
-                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full py-2 px-3 text-sm text-gray-700 outline-none"
+                className="shadow-sm w-1/2  bg-gray-50 border mb-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-1 px-3 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.companyWebsiteUrl}
                 required
               />
+              <p className="mb-1">Company website needs to be verify for chatbot deployment</p>
             </div>
             <div className="mb-6">
               <label
                 htmlFor="companyEmail"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-base font-medium text-gray-700 mb-2"
               >
                 Company email
               </label>
@@ -104,17 +160,71 @@ const RegisterForm = () => {
                 type="email"
                 id="companyEmail"
                 name="companyEmail"
-                className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full py-2 px-3 text-sm text-gray-700 outline-none"
+                className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-full py-1 px-3 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.companyEmail}
                 required
               />
+
             </div>
-            <button
-              type="submit"
-              className="btn btn-sm ">
-              Create Chatbot
-            </button>
+            <hr className="border-b  mb-4"></hr>
+            <div className="mb-14">
+              <p
+                htmlFor="companyEmail"
+                className="block text-base font-medium text-gray-700 mb-2"
+              >
+                Initialize this chatbot with:
+              </p>
+              <div className="flex flex-wrap justify-center align-middle items-center py-0">
+                <div className="w-full md:w-1/3 mb-4">
+                  <label className="flex items-center mb-2">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Greetings</span>
+                  </label>
+                  <label className="flex items-center mb-2">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Introduction</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Small Talk</span>
+                  </label>
+                </div>
+                <div className="w-full md:w-1/3 mb-4">
+                  <label className="flex items-center mb-2">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Weather report</span>
+                  </label>
+                  <label className="flex items-center mb-2">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Jokes and Humor</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Time and Date</span>
+                  </label>
+                </div>
+                <div className="w-full md:w-1/3 mb-4">
+                  <label className="flex items-center mb-2">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Queries</span>
+                  </label>
+                  <label className="flex items-center mb-2">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Goodbye Message</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <span className="ml-2 text-gray-700">Simple text-based games</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="mb-6 text-end">
+              <button className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" to="/addchatbot">
+                Create Chatbot
+              </button>
+            </div>
           </form>
         </div>
       </div>

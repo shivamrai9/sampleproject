@@ -11,12 +11,12 @@ function App() {
 
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
      <Router>
           <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/addchatbot' element={<ChatBotForm />} />
-          <Route exact path='/addchatbot/register' element={<RegisterForm />} />
+          <Route exact path='/addchatbot/:id' element={<ChatBotForm />} />
+          <Route exact path='/register' element={<RegisterForm />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />
           </Routes>
