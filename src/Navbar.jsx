@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
 import cmplogo from '../src/images/brandlogo.svg'
+import { Link, useNavigate } from 'react-router-dom';
 export const Navbar = () => {
-	let navigate = useNavigate();
 	const [isMenuOpen, setMenuOpen] = useState(false);
-	// const navigate = useNavigate()
+	const navigate = useNavigate()
 
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen);
@@ -30,10 +29,10 @@ export const Navbar = () => {
 			<nav className="navbar bg-gradient-to-r from-pink-500 to-orange-300  px-5 py-1 text-white shadow  justify-between">
 				{/* Left side */}
 				<div className="flex-1">
-					<Link to='/'>
+				<Link to='/'>
 
 						<img src={cmplogo} alt="Logo" className="hidden md:block w-auto  h-14" />
-					</Link>
+				</Link>
 					<ul className="ml-4 space-x-4 hidden lg:flex">
 						<li className='btn btn-sm btn-ghost'>Chatbot</li>
 						<li className='btn btn-sm btn-ghost'>Account</li>
