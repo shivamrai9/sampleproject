@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar } from '../Navbar'
 
 
 const Home = () => {
@@ -35,7 +34,6 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
       <div className=" bg-white">
         <header className="flex justify-end items-center py-4 px-8 pb-10">
           <Link className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" to="/register">

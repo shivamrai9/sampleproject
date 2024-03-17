@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-    {/* <Navbar /> */}
      <Router>
+    <Navbar />
           <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/addchatbot/:id' element={<ChatBotForm />} />
