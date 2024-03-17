@@ -8,16 +8,32 @@ const ChatBotForm = () => {
     companyName: '',
     companyWebsiteUrl: '',
     companyEmail: '',
-  })
+    greetings: false,
+    introduction: false,
+    smallTalk: false,
+    weatherReport: false,
+    jokesAndHumor: false,
+    timeAndDate: false,
+    queries: false,
+    goodbyeMessage: false,
+    simpleGames: false,
+  });
 
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value })
-  }
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+
+    setFormData({
+      ...formData,
+      [name]: newValue,
+    });
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log('Form Data:', formData)
-  }
+    event.preventDefault();
+    console.log('Form Data:', formData);
+    // Add further form submission logic here
+  };
 
   return (
     <>
@@ -74,7 +90,7 @@ const ChatBotForm = () => {
                 type="text"
                 id="companyName"
                 name="companyName"
-                className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-full py-2 px-3 text-base text-gray-700 outline-none"
+                className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.companyName}
                 required
@@ -88,10 +104,10 @@ const ChatBotForm = () => {
                 Company website URL
               </label>
               <input
-                type="url"
+                type="text"
                 id="companyWebsiteUrl"
                 name="companyWebsiteUrl"
-                className="shadow-sm w-1/2  bg-gray-50 border mb-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-full py-2 px-3 text-base text-gray-700 outline-none"
+                className="shadow-sm w-1/2  bg-gray-50 border mb-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.companyWebsiteUrl}
                 required
@@ -109,7 +125,7 @@ const ChatBotForm = () => {
                 type="email"
                 id="companyEmail"
                 name="companyEmail"
-                className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-full py-2 px-3 text-base text-gray-700 outline-none"
+                className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.companyEmail}
                 required
@@ -127,50 +143,50 @@ const ChatBotForm = () => {
               <div className="flex flex-wrap justify-center align-middle items-center py-0">
                 <div className="w-full md:w-1/3 mb-4">
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox"  className="w-5 h-5 rounded focus:ring-2" name='greetings' checked={formData.greetings} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Greetings</span>
                   </label>
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='introduction' checked={formData.introduction} onChange={handleChange} />
                     <span className="ml-2 text-gray-700">Introduction</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='smallTalk' checked={formData.smallTalk} onChange={handleChange} />
                     <span className="ml-2 text-gray-700">Small Talk</span>
                   </label>
                 </div>
                 <div className="w-full md:w-1/3 mb-4">
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='weatherReport' checked={formData.weatherReport} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Weather report</span>
                   </label>
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='jokesAndHumor' checked={formData.jokesAndHumor} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Jokes and Humor</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='timeAndDate' checked={formData.timeAndDate} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Time and Date</span>
                   </label>
                 </div>
                 <div className="w-full md:w-1/3 mb-4">
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='queries' checked={formData.queries} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Queries</span>
                   </label>
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='goodbyeMessage' checked={formData.goodbyeMessage} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Goodbye Message</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='simpleGames' checked={formData.simpleGames} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Simple text-based games</span>
                   </label>
                 </div>
               </div>
             </div>
-            <div className="mb-6 text-end">
-              <button className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" to="/addchatbot">
+            <div className="mb-6 text-end"  type="submit">
+              <button className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" >
                 Create Chatbot
               </button>
             </div>

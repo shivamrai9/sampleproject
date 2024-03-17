@@ -11,10 +11,25 @@ const RegisterForm = () => {
     companyName: '',
     companyWebsiteUrl: '',
     companyEmail: '',
+    greetings: false,
+    introduction: false,
+    smallTalk: false,
+    weatherReport: false,
+    jokesAndHumor: false,
+    timeAndDate: false,
+    queries: false,
+    goodbyeMessage: false,
+    simpleGames: false,
   });
 
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+
+    setFormData({
+      ...formData,
+      [name]: newValue,
+    });
   };
 
   const handleSubmit = (event) => {
@@ -35,13 +50,13 @@ const RegisterForm = () => {
           <hr className="border-b mb-4"></hr>
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
-              <label htmlFor="chatbotName" className="block text-base font-medium text-gray-700 mb-2">
+              <label htmlFor="FullName" className="block text-base font-medium text-gray-700 mb-2">
                 Full name
               </label>
               <input
                 type="text"
-                id="chatbotName"
-                name="chatbotName"
+                id="FullName"
+                name="FullName"
                 className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-1 px-3 mb-1 text-base text-gray-700 outline-none"
                 onChange={handleChange}
                 value={formData.FullName}
@@ -124,7 +139,7 @@ const RegisterForm = () => {
                 Company website URL
               </label>
               <input
-                type="url"
+                type="text"
                 id="companyWebsiteUrl"
                 name="companyWebsiteUrl"
                 className="shadow-sm w-1/2 bg-gray-50 border mb-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl py-1 px-3 text-base text-gray-700 outline-none"
@@ -156,52 +171,52 @@ const RegisterForm = () => {
               <div className="flex flex-wrap justify-center align-middle items-center py-0">
                 <div className="w-full md:w-1/3 mb-4">
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox"  className="w-5 h-5 rounded focus:ring-2" name='greetings' checked={formData.greetings} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Greetings</span>
                   </label>
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='introduction' checked={formData.introduction} onChange={handleChange} />
                     <span className="ml-2 text-gray-700">Introduction</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='smallTalk' checked={formData.smallTalk} onChange={handleChange} />
                     <span className="ml-2 text-gray-700">Small Talk</span>
                   </label>
                 </div>
                 <div className="w-full md:w-1/3 mb-4">
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='weatherReport' checked={formData.weatherReport} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Weather report</span>
                   </label>
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='jokesAndHumor' checked={formData.jokesAndHumor} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Jokes and Humor</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='timeAndDate' checked={formData.timeAndDate} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Time and Date</span>
                   </label>
                 </div>
                 <div className="w-full md:w-1/3 mb-4">
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='queries' checked={formData.queries} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Queries</span>
                   </label>
                   <label className="flex items-center mb-2">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='goodbyeMessage' checked={formData.goodbyeMessage} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Goodbye Message</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" />
+                    <input type="checkbox" className="w-5 h-5 rounded focus:ring-2" name='simpleGames' checked={formData.simpleGames} onChange={handleChange}/>
                     <span className="ml-2 text-gray-700">Simple text-based games</span>
                   </label>
                 </div>
               </div>
             </div>
-            <div className="mb-6 text-end">
-              <Link to="/addchatbot" className="btn btn-sm px-12 bg-black hover:bg-slate-900 text-white rounded-full">
+            <div className="mb-6 text-end"  type="submit">
+              <button className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" >
                 Create Chatbot
-              </Link>
+              </button>
             </div>
           </form>
         </div>
