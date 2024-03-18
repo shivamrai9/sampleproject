@@ -5,6 +5,7 @@ import ChatBotForm from "../pages/ChatBotForm";
 import RegisterForm from "../pages/RegisterForm";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import ChatBotRoutes from "./ChatBotRoutes";
 
 const AllRoutes = () => {
   
@@ -16,7 +17,7 @@ const AllRoutes = () => {
         <Route path="register" element={<RegisterForm />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
-        {/* <Route path="dashboard" element={<DashboardRoutes />} /> */}
+        <Route path="ChatBot/*" element={<ChatBotRoutes />} />
       </Route>
     </Routes>
   );

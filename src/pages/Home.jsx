@@ -36,7 +36,7 @@ const Home = () => {
     <>
       <div className=" bg-white">
         <header className="flex justify-end items-center py-4 px-8 pb-10">
-          <Link className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" to="/register">
+          <Link className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" to="/ChatBot">
             Add Chatbot
           </Link>
         </header>

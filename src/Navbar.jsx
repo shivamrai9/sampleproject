@@ -26,7 +26,7 @@ export const Navbar = () => {
 	}
 	return (
 		<>
-			<nav className="navbar bg-gradient-to-r from-pink-500 to-orange-300  px-5 py-1 text-white shadow  justify-between">
+			<nav className="navbar bg-gradient-to-r from-pink-500 to-orange-300  px-12 py-1 text-white shadow  justify-between">
 				{/* Left side */}
 				<div className="flex-1">
 				<Link to='/'>
