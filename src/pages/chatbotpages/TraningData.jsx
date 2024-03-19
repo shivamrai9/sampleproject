@@ -3,7 +3,7 @@ import React from 'react'
 const TraningData = () => {
     return (
         <>
-            <div className="container mx-auto mt-8">
+            <div className="max-w-7xl mx-auto mt-8">
                 <div className="flex flex-col w-full border-opacity-50">
                     <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
                         <div className="flex items-center space-x-4">
