@@ -34,13 +34,12 @@ const Home = () => {
 
   return (
     <>
-      <div className=" bg-white">
+        <div className="container mx-auto px-40  h-[400px] ">
         <header className="flex justify-end items-center py-4 px-8 pb-10">
           <Link className="btn btn-sm px-12  bg-black hover:bg-slate-900 text-white rounded-full" to="/ChatBot">
             Add Chatbot
           </Link>
         </header>
-        <div className="container mx-auto px-40  h-[400px] ">
           {/* <h1 className="text-3xl font-bold mb-4">Our Products</h1> */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-32 gap-y-14 py-7">
             {products.map((product) => (
@@ -48,7 +47,6 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </div>
     </>
   )
 }
