@@ -18,8 +18,8 @@ const ChatBotRoutes = () => {
         <Route path="/" element={<Outlet />}>
           <Route index element={<Analytics/>} />
           <Route path="/info" element={<Info/>} />
-          <Route path="/trainingdata" element={<TraningData/>} />
           <Route path="/conversation" element={<Conversation/>} />
+          <Route path="/trainingdata" element={<TraningData/>} />
         </Route>
       </Routes>
     </>

@@ -21,11 +21,11 @@ const TraningData = () => {
                             {/* head */}
                             <thead>
                                 <tr>
-                                    <th>#Document ID</th>
-                                    <th>Title</th>
-                                    <th>Trained</th>
-                                    <th>IP Address</th>
-                                    <th>Action</th>
+                                    <th className='text-slate-700 font-extrabold'>#Document ID</th>
+                                    <th className='text-slate-700 font-extrabold'>Title</th>
+                                    <th className='text-slate-700 font-extrabold'>Trained</th>
+                                    <th className='text-slate-700 font-extrabold'>IP Address</th>
+                                    <th className='text-slate-700 font-extrabold'>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

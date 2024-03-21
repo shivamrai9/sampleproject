@@ -257,10 +257,36 @@ const Conversation = () => {
                         </div>
                     </div>
                     <div className='fixed z-20 top-[7.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block'>
-                        <div className="px-8">
-                            <h5 class="text-slate-900 font-semibold mb-4 text-sm leading-6 dark:text-slate-100">On this page</h5>
-                            <ul className='text-slate-700 text-sm leading-6'>
-                                <li><a href="text-slate-700 text-sm leading-6" className="">User inputs:</a></li>
+                        <div className="">
+
+                            <ul className='space-y-3'>
+                                <li>
+                                    <h5 class="text-lg font-bold text-slate-950 dark:text-slate-400 mb-2">user Inputs:</h5>
+                                    <hr />
+                                    <ul className='text-slate-700 text-sm leading-6  space-y-3'>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">First intent::</a></li>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">Most intented::</a></li>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">Stories::</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h5 class="text-lg font-bold text-slate-950 dark:text-slate-400 mb-2">Session Information::</h5>
+                                    <hr />
+                                    <ul className='text-slate-700 text-sm leading-6  space-y-3'>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">First intent::</a></li>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">Most intented::</a></li>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">Stories::</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h5 class="text-lg font-bold text-slate-950 dark:text-slate-400 mb-2">Device & browser Information::</h5>
+                                    <hr />
+                                    <ul className='text-slate-700 text-sm leading-6  space-y-3'>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">First intent::</a></li>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">Most intented::</a></li>
+                                        <li><a href="text-slate-700 text-sm leading-6" className="">Stories::</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
