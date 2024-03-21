@@ -6,6 +6,7 @@ import RegisterForm from "../pages/RegisterForm";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import ChatBotRoutes from "./ChatBotRoutes";
+import SubscriptionRoutes from "./SubscriptionRoutes";
 
 const AllRoutes = () => {
   
@@ -17,6 +18,7 @@ const AllRoutes = () => {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
         <Route path="chatbot/:id/*" element={<ChatBotRoutes />} />
+        <Route path="subscription/*" element={<SubscriptionRoutes />} />
     </Routes>
   );
 };
