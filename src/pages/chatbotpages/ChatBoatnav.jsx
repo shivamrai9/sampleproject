@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ChatBoatnav = () => {
+const ChatBoatnav = ({id}) => {
+    console.log(id)
     return (
         <>
             <div className='sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'>
@@ -16,12 +17,12 @@ const ChatBoatnav = () => {
                                     <li><a className='dark:text-white'>Chatbot Title</a></li>
                                     <li>
                                         <ul className="p-2">
-                                            <li><Link to="/analytics">Analytics</Link></li>
-                                            <li><Link to="/info">Info</Link></li>
-                                            <li><Link to="/conversation">Conversation</Link></li>
-                                            <li><Link to="/training-data">Training data</Link></li>
-                                            <li><Link to="/integration">Integration</Link></li>
-                                            <li><Link to="/snippet">Snippet</Link></li>
+                                            <li><Link to="/chatbot/" className="link link-neutral dark:text-white">Analytics</Link></li>
+                                            <li><Link to="/chatbot/info" className="link link-neutral dark:text-white">Info</Link></li>
+                                            <li><Link to="/chatbot/conversation" className="link link-neutral dark:text-white">Conversation</Link></li>
+                                            <li><Link to="/chatbot/trainingdata" className="link link-neutral dark:text-white">Training data</Link></li>
+                                            <li><Link to="/chatbot/integration" className="link link-neutral dark:text-white">Integration</Link></li>
+                                            <li><Link to="/chatbot/snippet" className="link link-neutral dark:text-white">Snippet</Link></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -30,12 +31,12 @@ const ChatBoatnav = () => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li><Link to="/ChatBot/" className="link link-neutral dark:text-white">Analytics</Link></li>
-                                <li><Link to="/ChatBot/info" className="link link-neutral dark:text-white">Info</Link></li>
-                                <li><Link to="/ChatBot/conversation" className="link link-neutral dark:text-white">Conversation</Link></li>
-                                <li><Link to="/ChatBot/trainingdata" className="link link-neutral dark:text-white">Training data</Link></li>
-                                <li><Link to="/ChatBot/integration" className="link link-neutral dark:text-white">Integration</Link></li>
-                                <li><Link to="/ChatBot/snippet" className="link link-neutral dark:text-white">Snippet</Link></li>
+                                <li><Link to={`/chatbot/${id}`} className="link link-neutral dark:text-white">Analytics</Link></li>
+                                <li><Link to={`/chatbot/${id}/info`} className="link link-neutral dark:text-white">Info</Link></li>
+                                <li><Link to={`/chatbot/${id}/conversation`} className="link link-neutral dark:text-white">Conversation</Link></li>
+                                <li><Link to={`/chatbot/${id}/trainingdata`} className="link link-neutral dark:text-white">Training data</Link></li>
+                                <li><Link to="/chatbot/integration" className="link link-neutral dark:text-white">Integration</Link></li>
+                                <li><Link to="/chatbot/snippet" className="link link-neutral dark:text-white">Snippet</Link></li>
                             </ul>
                         </div>
                     </nav>

@@ -11,14 +11,12 @@ const AllRoutes = () => {
   
   return (
     <Routes>
-      <Route path="/" element={<Outlet />}>
-        <Route index element={<Home />} />
-        <Route path="addchatbot/:id" element={<ChatBotForm />} />
+        <Route  path="/" element={<Home />} />
+        <Route path="addchatbot" element={<ChatBotForm />} />
         <Route path="register" element={<RegisterForm />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
-        <Route path="ChatBot/*" element={<ChatBotRoutes />} />
-      </Route>
+        <Route path="chatbot/:id/*" element={<ChatBotRoutes />} />
     </Routes>
   );
 };
