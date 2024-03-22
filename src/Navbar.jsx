@@ -35,9 +35,9 @@ export const Navbar = () => {
 								<img src={cmplogo} alt="Logo" className="hidden md:block w-auto  h-14" />
 							</Link>
 							<ul className="ml-4 space-x-4 hidden lg:flex">
-								<li  className="btn btn-sm btn-ghost"><Link to="/chatbot/1">Chatbot</Link></li>
-								<li className='btn btn-sm btn-ghost'><Link to="/account">Account</Link></li>
-								<li className='btn btn-sm btn-ghost'><Link to="/subscription">Subscription</Link></li>
+								<Link to="/chatbot/1"><li className="btn btn-sm btn-ghost">Chatbot</li></Link>
+								<Link to="/account"><li className='btn btn-sm btn-ghost'>Account</li></Link>
+								<Link to="/subscription"><li className='btn btn-sm btn-ghost'>Subscription</li></Link>
 							</ul>
 							<label className="btn btn-circle swap swap-rotate md:hidden">
 								<input type="checkbox" />
