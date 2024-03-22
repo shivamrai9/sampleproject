@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import cmplogo from '../src/images/brandlogo.svg'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 export const Navbar = () => {
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const navigate = useNavigate()
@@ -30,14 +30,13 @@ export const Navbar = () => {
 				<div className='max-w-7xl mx-auto'>
 					<nav className="navbar py-1 text-white  justify-between ">
 						<div className="flex-1">
-							<Link to='/'>
-
+							<NavLink to='/'>
 								<img src={cmplogo} alt="Logo" className="hidden md:block w-auto  h-14" />
-							</Link>
+							</NavLink>
 							<ul className="ml-4 space-x-4 hidden lg:flex">
-								<Link to="/chatbot/1"><li className="btn btn-sm btn-ghost">Chatbot</li></Link>
-								<Link to="/account"><li className='btn btn-sm btn-ghost'>Account</li></Link>
-								<Link to="/subscription"><li className='btn btn-sm btn-ghost'>Subscription</li></Link>
+								<NavLink to='chatbot'><li className="btn btn-sm btn-ghost">Chatbot</li></NavLink>
+								<NavLink to='account'><li className="btn btn-sm btn-ghost">Account</li></NavLink>
+								<NavLink to='subscription'><li className="btn btn-sm btn-ghost">Subscription</li></NavLink>
 							</ul>
 							<label className="btn btn-circle swap swap-rotate md:hidden">
 								<input type="checkbox" />

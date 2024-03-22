@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const ChatBoatnav = ({id}) => {
     console.log(id)
@@ -31,12 +31,12 @@ const ChatBoatnav = ({id}) => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li><Link to={`/chatbot/${id}`} className="link link-neutral dark:text-white">Analytics</Link></li>
-                                <li><Link to={`/chatbot/${id}/info`} className="link link-neutral dark:text-white">Info</Link></li>
-                                <li><Link to={`/chatbot/${id}/conversation`} className="link link-neutral dark:text-white">Conversation</Link></li>
-                                <li><Link to={`/chatbot/${id}/trainingdata`} className="link link-neutral dark:text-white">Training data</Link></li>
-                                <li><Link to="/chatbot/integration" className="link link-neutral dark:text-white">Integration</Link></li>
-                                <li><Link to="/chatbot/snippet" className="link link-neutral dark:text-white">Snippet</Link></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="analytics">Analytics</NavLink></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="info">Info</NavLink></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="conversation">Conversation</NavLink></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="trainingdata">Training data</NavLink></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="integration">Integration</NavLink></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="snippet">Snippet</NavLink></li>
                             </ul>
                         </div>
                     </nav>

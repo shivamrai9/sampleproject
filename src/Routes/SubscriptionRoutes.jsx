@@ -7,12 +7,7 @@ const SubscriptionRoutes = () => {
   return (
     <>
     <SubscriptionNav />
-      <Routes>
-          <Route path='/activeplan' element={<ActivePlan />} />
-        {/* <Route path="/" element={<Outlet />}> */}
-          <Route path='/packagehistory' element={<ActivePlan />} />
-        {/* </Route> */}
-      </Routes>
+    <Outlet />
     </>
   )
 }
