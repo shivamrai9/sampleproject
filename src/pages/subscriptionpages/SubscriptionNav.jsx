@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const SubscriptionNav = () => {
   return (
@@ -29,9 +29,9 @@ const SubscriptionNav = () => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li><Link to='/subscription/activeplan' className="link link-neutral dark:text-white">Active Plan</Link></li>
-                                <li><Link to='/subscription/packagehistory' className="link link-neutral dark:text-white">Package History</Link></li>
-                                <li><Link to='' className="link link-neutral dark:text-white">Order history</Link></li>
+                                <li><NavLink to='activeplan' className="link link-neutral dark:text-white">Active Plan</NavLink></li>
+                                <li><NavLink to='packagehistory' className="link link-neutral dark:text-white">Package History</NavLink></li>
+                                {/* <li><NavLink to='' className="link link-neutral dark:text-white">Order history</NavLink></li> */}
                             </ul>
                         </div>
                     </nav>

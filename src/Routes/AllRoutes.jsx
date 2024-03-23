@@ -37,7 +37,7 @@ const AllRoutes = () => {
       </Route>
       <Route path="/subscription" element={<SubscriptionRoutes />} >
         <Route path="activeplan" element={<ActivePlan />} />
-        
+        <Route path="packagehistory" element={<ActivePlan />} />
       </Route>
     </Routes>
   );
