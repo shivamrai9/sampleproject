@@ -1,35 +1,16 @@
 import React, { useState } from 'react'
 
+import { useForm } from 'react-hook-form';
+
 const BasicInfo = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    companyName: '',
-    companyEmail: '',
-    companyWebsiteUrl: '',
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
-    country: ''
-  });
-
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here, you can send data to backend or do whatever you need
-    console.log(formData);
-  };
+  
+  // const { register, handleSubmit, formState : { errors } } = useForm();
+  // const onSubmit = data => console.log(data);
+   
+  const { register, handleSubmit: handleSubmitPersonal, formState: { errors: errorsPersonal } } = useForm();
+  const { register: registerCompany, handleSubmit: handleSubmitCompany, formState: { errors: errorsCompany } } = useForm();
+  const onSubmitPersonal = data => console.log(data);
+  const onSubmitCompany = data => console.log(data);
 
 
   return (
@@ -42,7 +23,8 @@ const BasicInfo = () => {
           <div className="max-w-3xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
-              <form onSubmit={handleSubmit}>
+              {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+              <form onSubmit={handleSubmitPersonal(onSubmitPersonal)}>
                 <div className="mb-6">
                   <label
                     htmlFor="chatbotName"
@@ -55,9 +37,10 @@ const BasicInfo = () => {
                     className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-2 px-3 mb-1 text-base text-gray-700 outline-none"
                     id="firstName"
                     name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
+                    { ...register ("First Name", {required: true})}
+                    // value={formData.firstName}
+                    // onChange={handleChange}
+                    // required
                   />
                 </div>
                 <div className="mb-6">
@@ -72,9 +55,10 @@ const BasicInfo = () => {
                     className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
                     id="lastName"
                     name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
+                    { ...register ('Last Name', {required: true})}
+                    // value={formData.lastName}
+                    // onChange={handleChange}
+                    // required
                   />
                 </div>
                 <div className="mb-6">
@@ -89,26 +73,28 @@ const BasicInfo = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
+                    {...register ('Email', {required: true})}
+                    // value={formData.email}
+                    // onChange={handleChange}
+                    // required
                   />
                 </div>
                 <div className="mb-6">
                   <label
-                    htmlFor="companyWebsiteUrl"
+                    htmlFor="phone"
                     className="block text-base font-medium text-gray-700 mb-2"
                   >
                     Phone
                   </label>
                   <input
                     type="text"
-                    id="companyWebsiteUrl"
-                    name="companyWebsiteUrl"
+                    id="phone"
+                    name="phone"
                     className="shadow-sm w-1/2  bg-gray-50 border mb-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
-                    onChange={handleChange}
-                    value={formData.companyWebsiteUrl}
-                    required
+                    { ...register ('Phone no', {required: true})}
+                    // onChange={handleChange}
+                    // value={formData.companyWebsiteUrl}
+                    // required
                   />
                 </div>
                 <div className="mb-6">
@@ -123,9 +109,10 @@ const BasicInfo = () => {
                     type="tel"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
+                    {...register ('Company Email', { required: true})}
+                    // value={formData.phone}
+                    // onChange={handleChange}
+                    // required
                   />
 
                 </div>
@@ -145,7 +132,8 @@ const BasicInfo = () => {
           <div className="max-w-3xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Company Information</h2>
-              <form onSubmit={handleSubmit}>
+              {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+              <form onSubmit={handleSubmitCompany(onSubmitCompany)}>
                 <div className="mb-6">
                   <label
                     htmlFor="companyName"
@@ -158,9 +146,10 @@ const BasicInfo = () => {
                     className="shadow-sm bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl w-1/2 py-2 px-3 mb-1 text-base text-gray-700 outline-none"
                     id="companyName"
                     name="companyName"
-                    value={formData.companyName}
-                    onChange={handleChange}
-                    required
+                    {...registerCompany ('Company Name', {required: true})}
+                    // value={formData.companyName}
+                    // onChange={handleChange}
+                   // required
                   />
                 </div>
                 <div className="mb-6">
@@ -175,9 +164,10 @@ const BasicInfo = () => {
                     type="email"
                     id="companyEmail"
                     name="companyEmail"
-                    value={formData.companyEmail}
-                    onChange={handleChange}
-                    required
+                    {...registerCompany ('Company Email', {required:true})}
+                    // value={formData.companyEmail}
+                    // onChange={handleChange}
+                   // required
                   />
                 </div>
                 <div className="mb-6">
@@ -192,9 +182,10 @@ const BasicInfo = () => {
                     type="text"
                     id="companyWebsiteUrl"
                     name="companyWebsiteUrl"
-                    value={formData.companyWebsiteUrl}
-                    onChange={handleChange}
-                    required
+                    {...registerCompany('Company Website URL', {required: true})}
+                    // value={formData.companyWebsiteUrl}
+                    // onChange={handleChange}
+                    //required
                   />
                 </div>
                 <div className="mb-6">
@@ -209,9 +200,10 @@ const BasicInfo = () => {
                     id="address"
                     name="address"
                     className="shadow-sm w-1/2  bg-gray-50 border mb-1 focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
-                    onChange={handleChange}
-                    value={formData.address}
-                    required
+                    {...registerCompany( 'Address', {required:true})}
+                    // onChange={handleChange}
+                    // value={formData.address}
+                   // required
                   />
                 </div>
                 <div className="mb-6">
@@ -225,10 +217,11 @@ const BasicInfo = () => {
                     type="text"
                     id="city"
                     name="city"
+                    {...registerCompany ('City', {required: true})}
                     className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
-                    onChange={handleChange}
-                    value={formData.city}
-                    required
+                    // onChange={handleChange}
+                    // value={formData.city}
+                   // required
                   />
                 </div>
                 <div className="mb-6">
@@ -243,9 +236,10 @@ const BasicInfo = () => {
                     id="state"
                     name="state"
                     className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
-                    onChange={handleChange}
-                    value={formData.state}
-                    required
+                    {...registerCompany ('State', {required:true})}
+                    // onChange={handleChange}
+                    // value={formData.state}
+                   // required
                   />
                 </div>
                 <div className="mb-6">
@@ -260,9 +254,10 @@ const BasicInfo = () => {
                     id="zip"
                     name="zip"
                     className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
-                    onChange={handleChange}
-                    value={formData.zip}
-                    required
+                    {...registerCompany ('Zip Code', {required: true})}
+                    // onChange={handleChange}
+                    // value={formData.zip}
+                   // required
                   />
                 </div>
                 <div className="mb-6">
@@ -277,9 +272,10 @@ const BasicInfo = () => {
                     id="country"
                     name="country"
                     className="shadow-sm w-1/2  bg-gray-50 border focus:ring-indigo-500 focus:border-indigo-500 rounded-3xl  py-2 px-3 text-base text-gray-700 outline-none"
-                    onChange={handleChange}
-                    value={formData.country}
-                    required
+                    {...registerCompany ('country', {required:true})}
+                    // onChange={handleChange}
+                    // value={formData.country}
+                    //required
                   />
                 </div>
 
