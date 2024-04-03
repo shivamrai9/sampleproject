@@ -42,9 +42,9 @@ const ActivePlan = () => {
                             {/* head */}
                             <thead>
                                 <tr>
-                                    <th className='text-slate-700 font-extrabold'>#Document ID</th>
-                                    <th className='text-slate-700 font-extrabold'>Title</th>
-                                    <th className='text-slate-700 font-extrabold'>Trained</th>
+                                    <th className='text-slate-700 font-bold text-base'>Benefits</th>
+                                    <th className='text-slate-700 font-bold text-base'>Available</th>
+                                    <th className='text-slate-700 font-bold text-base'>Used</th>
                                 </tr>
                             </thead>
                             <tbody>

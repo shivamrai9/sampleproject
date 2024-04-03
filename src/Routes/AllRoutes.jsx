@@ -15,6 +15,7 @@ import ActivePlan from "../pages/subscriptionpages/ActivePlan";
 import Account from "../pages/account/Account";
 import BasicInfo from "../pages/account/BasicInfo";
 import Payment from "../pages/account/Payment";
+import Packagehistory from "../pages/subscriptionpages/Packagehistory";
 
 const AllRoutes = () => {
 
@@ -37,7 +38,7 @@ const AllRoutes = () => {
       </Route>
       <Route path="/subscription" element={<SubscriptionRoutes />} >
         <Route path="activeplan" element={<ActivePlan />} />
-        <Route path="packagehistory" element={<ActivePlan />} />
+        <Route path="packagehistory" element={<Packagehistory />} />
       </Route>
     </Routes>
   );
