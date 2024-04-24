@@ -27,17 +27,17 @@ const AllRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/chatbot" element={<ChatBotRoutes />} >
-        <Route path="analytics" element={<Analytics />} />
+        <Route index  element={<Analytics />} />
         <Route path="info" element={<Info />} />
         <Route path="conversation" element={<Conversation />} />
         <Route path="trainingdata" element={<TraningData />} />
       </Route>
       <Route  path="/account" element={<Account />}>
-        <Route path='basicinfo' element={<BasicInfo />}/>
+        <Route index element={<BasicInfo />}/>
         <Route path="payment" element={<Payment />} />
       </Route>
       <Route path="/subscription" element={<SubscriptionRoutes />} >
-        <Route path="activeplan" element={<ActivePlan />} />
+        <Route index element={<ActivePlan />} />
         <Route path="packagehistory" element={<Packagehistory />} />
       </Route>
     </Routes>

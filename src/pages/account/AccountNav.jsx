@@ -29,7 +29,7 @@ const AccountNav = () => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li><NavLink to='basicinfo' className="link link-neutral dark:text-white">Basic Info</NavLink></li>
+                                <li><NavLink to='/account' className="link link-neutral dark:text-white">Basic Info</NavLink></li>
                                 <li><NavLink to='payment' className="link link-neutral dark:text-white">Payment</NavLink></li>
                             </ul>
                         </div>

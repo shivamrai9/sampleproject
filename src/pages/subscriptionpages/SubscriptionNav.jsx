@@ -29,7 +29,7 @@ const SubscriptionNav = () => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li><NavLink to='activeplan' className="link link-neutral dark:text-white">Active Plan</NavLink></li>
+                                <li><NavLink to='/subscription' className="link link-neutral dark:text-white">Active Plan</NavLink></li>
                                 <li><NavLink to='packagehistory' className="link link-neutral dark:text-white">Package History</NavLink></li>
                                 {/* <li><NavLink to='' className="link link-neutral dark:text-white">Order history</NavLink></li> */}
                             </ul>
