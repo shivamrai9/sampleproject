@@ -17,12 +17,12 @@ const ChatBoatnav = ({id}) => {
                                     <li><a className='dark:text-white'>Chatbot Title</a></li>
                                     <li>
                                         <ul className="p-2">
-                                            <li><Link to="/chatbot" className="link link-neutral dark:text-white">Analytics</Link></li>
-                                            <li><Link to="/chatbot/info" className="link link-neutral dark:text-white">Info</Link></li>
-                                            <li><Link to="/chatbot/conversation" className="link link-neutral dark:text-white">Conversation</Link></li>
-                                            <li><Link to="/chatbot/trainingdata" className="link link-neutral dark:text-white">Training data</Link></li>
-                                            <li><Link to="/chatbot/integration" className="link link-neutral dark:text-white">Integration</Link></li>
-                                            <li><Link to="/chatbot/snippet" className="link link-neutral dark:text-white">Snippet</Link></li>
+                                            <li><NavLink to="/chatbot" className="link link-neutral dark:text-white">Analytics</NavLink></li>
+                                            <li><NavLink to="/chatbot/info" className="link link-neutral dark:text-white">Info</NavLink></li>
+                                            <li><NavLink to="/chatbot/conversation" className="link link-neutral dark:text-white">Conversation</NavLink></li>
+                                            <li><NavLink to="/chatbot/trainingdata" className="link link-neutral dark:text-white">Training data</NavLink></li>
+                                            <li><NavLink to="/chatbot/integration" className="link link-neutral dark:text-white">Integration</NavLink></li>
+                                            <li><NavLink to="/chatbot/snippet" className="link link-neutral dark:text-white">Snippet</NavLink></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -31,7 +31,7 @@ const ChatBoatnav = ({id}) => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="/chatbot">Analytics</NavLink></li>
+                                <li className='className="link link-neutral dark:text-white"'><NavLink to="analytics">Analytics</NavLink></li>
                                 <li className='className="link link-neutral dark:text-white"'><NavLink to="info">Info</NavLink></li>
                                 <li className='className="link link-neutral dark:text-white"'><NavLink to="conversation">Conversation</NavLink></li>
                                 <li className='className="link link-neutral dark:text-white"'><NavLink to="trainingdata">Training data</NavLink></li>

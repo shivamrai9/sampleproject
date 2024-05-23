@@ -23,6 +23,13 @@ export const Navbar = () => {
 		localStorage.removeItem("authToken");
 		// navigate('/login');
 	}
+
+	const navigationActive = ({ isActive }) => {
+		return {
+		  color: isActive ?  "black" : "white" ,
+		  textDecoration: "none",
+		};
+	  };
 	return (
 		<>
 			<div className='w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75  bg-gradient-to-r from-pink-500 to-orange-300'>
@@ -34,9 +41,9 @@ export const Navbar = () => {
 								<img src={cmplogo} alt="Logo" className="hidden md:block w-auto  h-14" />
 							</NavLink>
 							<ul className="ml-4 space-x-4 hidden lg:flex">
-								<NavLink to='chatbot'><li className="btn btn-sm btn-ghost">Chatbot</li></NavLink>
-								<NavLink to='account'><li className="btn btn-sm btn-ghost">Account</li></NavLink>
-								<NavLink to='subscription'><li className="btn btn-sm btn-ghost">Subscription</li></NavLink>
+								<NavLink style={navigationActive} to='/chatbot/analytics'><li className="btn btn-sm btn-ghost">Chatbot</li></NavLink>
+								<NavLink style={navigationActive} to='account'><li className="btn btn-sm btn-ghost">Account</li></NavLink>
+								<NavLink style={navigationActive} to='subscription'><li className="btn btn-sm btn-ghost">Subscription</li></NavLink>
 							</ul>
 							<label className="btn btn-circle swap swap-rotate md:hidden">
 								<input type="checkbox" />
