@@ -1,28 +1,35 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv'
-import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import userRoutes from './routes/userRoutes.js';
+
+// Initialize dotenv to use environment variables
 dotenv.config()
-const port = 5000
 
-
+// Create an Express application
 const app = express()
-app.use(express.json())
+
+// Configure CORS middleware
 app.use(cors());
+app.use(express.json())
+
+
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGOURL)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((error) => console.error('Failed to connect to MongoDB', error));
+ 
+
+
+// Define routes
 app.use('/auth', userRoutes);
 
 
-mongoose.connect(process.env.MONGOURL).then(()=>{
-  console.log('db connected successfuly')
-}).catch((err)=>{
-  console.log("couldn't connect to db",err)
-})
 
-
-
-
+// Start the server
+const port =  5000;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

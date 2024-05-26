@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { Link ,useNavigate} from 'react-router-dom';
 
@@ -43,6 +44,43 @@ export default function Login() {
       console.error('An error occurred:', error);
     }
   };
+  
+  const loginwithgoogle = ()=>{
+    console.log("google")
+    window.open("http://localhost:5000/auth/google/callback","_self")
+}
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log(credentials);
+
+  //   try {
+  //     // Make a request to your authentication API endpoint using axios
+  //     const response = await axios.post('http://localhost:5000/auth/login', credentials, {
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     });
+
+  //     const json = response.data;
+  //     if (!json.success) {
+  //       alert('Enter Valid Credentials');
+  //     }
+
+  //     if (json.success) {
+  //       // Handle successful sign-in (e.g., redirect to dashboard)
+  //       localStorage.setItem('authToken', json.authtoken);
+  //       localStorage.setItem('userEmail', credentials.email);
+  //       console.log(localStorage.getItem('authToken'));
+  //       console.log(localStorage.getItem('userEmail'), 'login useremail');
+  //       navigate('/');
+  //     } else {
+  //       // Handle sign-in failure (e.g., show an error message)
+  //       console.error('Failed to sign in');
+  //     }
+  //   } catch (error) {
+  //     console.error('An error occurred:', error);
+  //   }
+  // };
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -106,7 +144,7 @@ export default function Login() {
             </div>
             <div className="flex text-center mt-3 gap-x-5">
               <div className="flex-1 border rounded-xl hover:bg-blue-100 cursor-pointer">
-                <div className="m-auto flex justify-center py-2">
+                <div className="m-auto flex justify-center py-2" onClick={loginwithgoogle}>
                   <svg
                     width="24px"
                     height="24px"
