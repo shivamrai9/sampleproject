@@ -45,10 +45,10 @@ export default function Login() {
     }
   };
   
-  const loginwithgoogle = ()=>{
-    console.log("google")
-    window.open("http://localhost:5000/auth/google/callback","_self")
-}
+  const handleGoogleLogin = () => {
+    // Redirect the user to the Google OAuth endpoint
+    window.location.href = 'http://localhost:5000/auth/google';
+  };
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   console.log(credentials);
@@ -144,7 +144,7 @@ export default function Login() {
             </div>
             <div className="flex text-center mt-3 gap-x-5">
               <div className="flex-1 border rounded-xl hover:bg-blue-100 cursor-pointer">
-                <div className="m-auto flex justify-center py-2" onClick={loginwithgoogle}>
+                <div className="m-auto flex justify-center py-2" onClick={handleGoogleLogin}>
                   <svg
                     width="24px"
                     height="24px"
