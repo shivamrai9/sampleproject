@@ -6,13 +6,21 @@ export default {
     'node_modules/flowbite-react/lib/esm/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        accentNeon: "#06b6d4",
+        rtlLight: "#F5F8FF",
+        rtlDark: "#1f2937",
+      },
+    },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
   },
   plugins: [
+    require("flowbite/plugin"),
+     require("tailwind-scrollbar"),
     require("daisyui"),
     function ({addUtilities }){
       const newUtilities = {

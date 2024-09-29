@@ -1,7 +1,28 @@
 import React, { useState } from 'react'
 import cmplogo from '../src/images/brandlogo.svg'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { FaGithub } from 'react-icons/fa'
+import { FaUserCircle } from "react-icons/fa";
+import SearchModal from './componants/SearchModal';
+import MobileSidebar from './componants/MobileSidebar';
+import { useQuery, gql } from '@apollo/client';
+
+
+const GET_LOCATIONS = gql`
+  query GetLocations {
+    locations {
+      id
+      name
+      description
+      photo
+    }
+  }
+`;
+
 export const Navbar = () => {
+	const { loading, error, data } = useQuery(GET_LOCATIONS);
+
+  
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const navigate = useNavigate()
 
@@ -24,15 +45,83 @@ export const Navbar = () => {
 		// navigate('/login');
 	}
 
+
+	const navLinks = [
+		{ name: "Chatbot", path: "/chatbot" },
+		{ name: "Account", path: "/account" },
+		{ name: "Subscription", path: "/subscription" },
+	];
+
+	// Function to render NavLink classes conditionally
 	const navigationActive = ({ isActive }) => {
-		return {
-		  color: isActive ?  "black" : "white" ,
-		  textDecoration: "none",
-		};
-	  };
+		return isActive ? "border-b-2 text-white" : "text-white select-none";
+	};
+
+	if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error : {error.message}</p>;
+
 	return (
 		<>
-			<div className='w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75  bg-gradient-to-r from-pink-500 to-orange-300'>
+			<header className="w-full flex-shrink-0 z-50 backdrop-blur dark:bg-rtlDark bg-gradient-to-r from-pink-500 to-orange-300  border-b border-b-accentNeon/20 flex items-center justify-between p-1 px-2">
+				<div className=" flex items-center text-base  gap-1">
+					<div className='md:hidden'>
+
+						<MobileSidebar />
+					</div>
+
+					<Link
+						to="/"
+						className="select-none hover:opacity-80 z-50 top-1 flex items-center text-base  gap-1  p-[2px] rounded-r-full px-4"
+					>
+						<img src={cmplogo} alt="" height={500} width={500} className="w-36 select-none " />
+
+					</Link>
+
+
+					<ul className="md:flex space-x-4 ms-12 hidden">
+						{/* Dynamic rendering of navLinks */}
+						{navLinks.map((link) => (
+							<li key={link.name}>
+								<NavLink to={link.path} className={navigationActive} >
+									{link.name}
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				<div className="text-accentNeon flex items-center justify-center gap-2">
+						<FaUserCircle className="text-4xl text-white"/>
+				</div>
+			</header>
+			{/* <nav className="w-full flex-shrink-0 z-50 backdrop-blur dark:bg-rtlDark bg-gradient-to-r from-pink-500 to-orange-300  border-b border-b-accentNeon/20 flex items-center justify-between p-1 px-12">
+				<div
+					className="select-none hover:opacity-80 z-50  flex items-center text-base gap-1 p-[2px] rounded-r-full px-4 "
+				>
+					<a href="/">
+
+						<img
+							src={cmplogo}
+							alt="logo"
+							className="w-44 select-none text-red-400 md:block hidden"
+						/>
+					</a>
+				</div>
+
+				<div className="text-accentNeon flex items-center justify-center gap-2">
+					<a
+						target="_blank"
+						href="https://github.com/devyanshyadav/Dev-Components"
+					>
+						<FaGithub className="text-4xl" />
+					</a>
+					<SearchModal />
+					<div className="md:hidden">
+						<MobileSidebar />
+					</div>
+				</div>
+			</nav> */}
+			{/* <div className='w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75  bg-gradient-to-r from-pink-500 to-orange-300'>
 
 				<div className='max-w-7xl mx-auto'>
 					<nav className="navbar py-1 text-white  justify-between ">
@@ -72,7 +161,7 @@ export const Navbar = () => {
 						</div>
 					</nav>
 				</div>
-			</div>
+			</div> */}
 		</>
 	)
 }

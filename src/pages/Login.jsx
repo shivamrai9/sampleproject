@@ -1,6 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Link ,useNavigate} from 'react-router-dom';
+import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  signInFailure,
+  signInStart,
+  signInSuccess,
+} from "../redux/user/userSlice"
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
 
@@ -8,71 +15,36 @@ export default function Login() {
     email: '',
     password: '',
   });
-
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  console.log(errorMessage)
   let navigate = useNavigate()
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(credentials)
-
-    try {
-      // Make a request to your authentication API endpoint
-      const response = await fetch('http://localhost:5000/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
-      });
-
-      const json = await response.json()
-      if (!json.success) {
-        alert("Enter Valid Credentials")
-      }
-
-      if (json.success) {
-        // Handle successful sign-in (e.g., redirect to dashboard)
-        localStorage.setItem("authToken",json.authtoken)
-        localStorage.setItem('userEmail', credentials.email)
-        console.log(localStorage.getItem("authToken"))
-        console.log(localStorage.getItem("userEmail"),"login useremail")
-        navigate('/')
-      } else {
-        // Handle sign-in failure (e.g., show an error message)
-        console.error('Failed to sign in');
-      }
-    } catch (error) {
-      console.error('An error occurred:', error);
-    }
-  };
-  
-  const handleGoogleLogin = () => {
-    // Redirect the user to the Google OAuth endpoint
-    window.location.href = 'http://localhost:5000/auth/google';
-  };
+  const dispatch = useDispatch();
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
-  //   console.log(credentials);
+  //   console.log(credentials)
 
   //   try {
-  //     // Make a request to your authentication API endpoint using axios
-  //     const response = await axios.post('http://localhost:5000/auth/login', credentials, {
+  //     // Make a request to your authentication API endpoint
+  //     const response = await fetch('http://localhost:5000/auth/login', {
+  //       method: 'POST',
   //       headers: {
   //         'Content-Type': 'application/json',
   //       },
+  //       body: JSON.stringify(credentials),
   //     });
 
-  //     const json = response.data;
+  //     const json = await response.json()
   //     if (!json.success) {
-  //       alert('Enter Valid Credentials');
+  //       alert("Enter Valid Credentials")
   //     }
 
   //     if (json.success) {
   //       // Handle successful sign-in (e.g., redirect to dashboard)
-  //       localStorage.setItem('authToken', json.authtoken);
-  //       localStorage.setItem('userEmail', credentials.email);
-  //       console.log(localStorage.getItem('authToken'));
-  //       console.log(localStorage.getItem('userEmail'), 'login useremail');
-  //       navigate('/');
+  //       localStorage.setItem("authToken",json.authtoken)
+  //       localStorage.setItem('userEmail', credentials.email)
+  //       console.log(localStorage.getItem("authToken"))
+  //       console.log(localStorage.getItem("userEmail"),"login useremail")
+  //       navigate('/')
   //     } else {
   //       // Handle sign-in failure (e.g., show an error message)
   //       console.error('Failed to sign in');
@@ -81,6 +53,57 @@ export default function Login() {
   //     console.error('An error occurred:', error);
   //   }
   // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post('/auth/login', credentials);
+  //     dispatch(loginSuccess(response.data.user));
+  //     navigate('/');
+  //   } catch (error) {
+  //     console.error('Error logging in:', error);
+  //   }
+  // };
+
+  const handleGoogleLogin = () => {
+    // Redirect the user to the Google OAuth endpoint
+    window.location.href = 'http://localhost:3000/auth/google';
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(credentials);
+    if (!credentials.email || !credentials.password) {
+      return dispatch(signInFailure("Please fill out all fields"));
+    }
+
+    try {
+      // Make a request to your authentication API endpoint using axios
+      const response = await axios.post('http://localhost:3000/auth/login', credentials, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const json = response.data;
+      if (!json.success) {
+        alert('Enter Valid Credentials');
+      }
+
+      if (json.success) {
+        // Handle successful sign-in (e.g., redirect to dashboard)
+        localStorage.setItem('authToken', json.authtoken);
+        localStorage.setItem('userEmail', credentials.email);
+        console.log(localStorage.getItem('authToken'));
+        console.log(localStorage.getItem('userEmail'), 'login useremail');
+        navigate('/');
+      } else {
+        // Handle sign-in failure (e.g., show an error message)
+        console.error('Failed to sign in');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -110,18 +133,18 @@ export default function Login() {
                 Email
               </label>
               <input value={credentials.email}
-                    onChange={onChange} placeholder="123@ex.com"
-                    type="email"
-                    name="email" className="transition-colors w-full rounded-md h-10 border indent-2 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+                onChange={onChange} placeholder="123@ex.com"
+                type="email"
+                name="email" className="transition-colors w-full rounded-md h-10 border indent-2 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
             </div>
             <div className="mt-4">
               <label className="text-gray-600 font-semibold" htmlFor="">
                 Password
               </label>
-              <input  placeholder="Password"
-                    type="password"
-                    name="password" value={credentials.password}
-                    onChange={onChange}  className="transition-colors w-full rounded-md h-10 border indent-2 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+              <input placeholder="Password"
+                type="password"
+                name="password" value={credentials.password}
+                onChange={onChange} className="transition-colors w-full rounded-md h-10 border indent-2 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
             </div>
             <div className="flex justify-between mt-8">
               <div className="flex gap-x-2">
@@ -313,6 +336,11 @@ export default function Login() {
         </form>
       </div>
 
+      {errorMessage && (
+        <Alert className="mt-5" color="failure">
+          {errorMessage}
+        </Alert>
+      )}
 
     </>
   )

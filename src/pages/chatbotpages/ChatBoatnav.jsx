@@ -31,18 +31,57 @@ const ChatBoatnav = ({id}) => {
                         </div>
                         <div className="hidden lg:flex">
                             <ul className="menu menu-horizontal px-1 space-x-4 ">
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="analytics">Analytics</NavLink></li>
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="info">Info</NavLink></li>
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="conversation">Conversation</NavLink></li>
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="trainingdata">Training data</NavLink></li>
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="integration">Integration</NavLink></li>
-                                <li className='className="link link-neutral dark:text-white"'><NavLink to="snippet">Snippet</NavLink></li>
+                                <li className='link link-neutral dark:text-white"'><NavLink to="analytics">Analytics</NavLink></li>
+                                <li className='link link-neutral dark:text-white"'><NavLink to="info">Info</NavLink></li>
+                                <li className='link link-neutral dark:text-white"'><NavLink to="conversation">Conversation</NavLink></li>
+                                <li className='link link-neutral dark:text-white"'><NavLink to="trainingdata">Training data</NavLink></li>
+                                <li className='link link-neutral dark:text-white"'><NavLink to="integration">Integration</NavLink></li>
+                                <li className='link link-neutral dark:text-white"'><NavLink to="snippet">Snippet</NavLink></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
             </div>
-
+ {/* <nav className="bg-gray-700 p-2 ">
+      <ul className="flex space-x-4">
+        <li>
+          <NavLink
+            to="analytics"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-400 border-b-2 border-blue-400"
+                : "text-white"
+            }
+          >
+            Analytics
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="info"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-400 border-b-2 border-blue-400"
+                : "text-white"
+            }
+          >
+            Info
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="conversation"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-400 border-b-2 border-blue-400"
+                : "text-white"
+            }
+          >
+            Conversation
+          </NavLink>
+        </li>
+      </ul>
+    </nav> */}
 
         </>
     )

@@ -1,109 +1,381 @@
 import React from 'react'
+import DevInput from '../../componants/DevInput'
+import { FiSearch } from "react-icons/fi";
+import { GoDotFill } from "react-icons/go";
+import SearchModal from '../../componants/SearchModal';
+import { Link } from 'react-router-dom';
 
 const Conversation = () => {
-    return (
+  return (
 
-        <>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 md:px-8'>
-                <div className='hidden lg:block fixed z-20 inset-0 top-[7.1125rem] left-[max(0px,calc(50%-45rem))] right-auto w-[19rem] pb-10 pl-8 pr-6 overflow-y-auto'>
-                    <nav className='lg:text-sm lg:leading-6 relative'>
-                        <div class="sticky top-0 -ml-0.5 pointer-events-none"><div class="h-10 bg-white dark:bg-slate-900"></div><div class="bg-white dark:bg-slate-900 relative pointer-events-auto"><button type="button" class="hidden w-full lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700"><svg width="24" height="24" fill="none" aria-hidden="true" class="mr-3 flex-none"><path d="m19 19-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle></svg>Quick search...<span class="ml-auto pl-3 flex-none text-xs font-semibold">Ctrl K</span></button></div><div class="h-8 bg-gradient-to-b from-white dark:from-slate-900"></div></div>
-                        <ul>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                            <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400" href="/docs/installation">Documentation</a></li>
-                        </ul>
+    <>
 
-                    </nav>
-                </div>
-                <div className="lg:pl-[19.5rem]">
-                    <div className="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16">
+    
+
+    
+      <main className="w-full px-2 flex gap-2 mx-auto  border border-t-2">
+        <div className=" h-[92vh] md:block hidden flex-shrink-0 overflow-y-scroll sticky inset-y-0 border-r border-accentNeon/30 px-3 pb-10">
+          <div className=" sticky top-0 bg-white dark:bg-[#0f172a] py-2">
+            <SearchModal bgDrop={false} />
+          </div>
+          <ul className="space-y-2 md:block hidden  pr-14 mt-4">
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+            <li
+              className={`w-full flex group items-center gap-2 hover:text-accentNeon rounded-lg cursor-pointer p-1 px-2 text-accentNeon`}
+            >
+              <GoDotFill className="text-xs group-hover:text-accentNeon" />{" "}
+              <Link
+                href={`/components`}
+                className="w-full"
+              >
+                Tittle afadfadfadfa
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <section className="flex-grow h-[92vh] p-3 md:p-5 space-y-5 overflow-x-hidden">
+        {/* <div className="max-w-3xl mx-auto pt-10 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16"> */}
                         <header id="header" class="relative z-20"><div><p class="mb-2 text-sm leading-6 font-semibold text-sky-500 dark:text-sky-400">Spacing</p><div class="flex items-center"><h1 class="inline-block text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">#92389328734874387</h1></div></div><p class="mt-2 text-lg text-slate-700 dark:text-slate-400">Utilities for controlling the space between child elements.</p></header>
                         <div className="chat chat-start">
                             <div className="chat-image avatar">
@@ -255,45 +527,61 @@ const Conversation = () => {
                                 Seen at 12:46
                             </div>
                         </div>
-                    </div>
-                    <div className='fixed z-20 top-[7.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block'>
-                        <div className="">
+                    {/* </div> */}
+        </section>
 
-                            <ul className='space-y-3'>
-                                <li>
-                                    <h5 class="text-lg font-bold text-slate-950 dark:text-slate-400 mb-2">user Inputs:</h5>
-                                    <hr />
-                                    <ul className='text-slate-700 text-sm leading-6  space-y-3'>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">First intent::</a></li>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">Most intented::</a></li>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">Stories::</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <h5 class="text-lg font-bold text-slate-950 dark:text-slate-400 mb-2">Session Information::</h5>
-                                    <hr />
-                                    <ul className='text-slate-700 text-sm leading-6  space-y-3'>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">First intent::</a></li>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">Most intented::</a></li>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">Stories::</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <h5 class="text-lg font-bold text-slate-950 dark:text-slate-400 mb-2">Device & browser Information::</h5>
-                                    <hr />
-                                    <ul className='text-slate-700 text-sm leading-6  space-y-3'>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">First intent::</a></li>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">Most intented::</a></li>
-                                        <li><a href="text-slate-700 text-sm leading-6" className="">Stories::</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+
+        <aside className="flex-shrink-0 h-[92vh] w-40 text-sm space-y-2 sticky top-0 md:block hidden border-l border-accentNeon/30 py-4">
+        <span className="px-4">Sub Components</span>
+        <ul className="space-y-2 *:opacity-50">
+            <li
+              className="hover:border-l-2 px-4 text-nowrap -translate-x-[2px] border-accentNeon"
+            >
+              <Link >title tilteks</Link>
+            </li>
+        </ul>
+      </aside>
+
+      </main>
+
+
+
+
+      <div className="flex h-screen">
+        {/* Left Section */}
+        <div className="w-1/4 bg-gray-100 h-full overflow-y-auto p-4">
+          <h2 className="font-bold text-lg mb-4">Left Section</h2>
+          <p>Content for the left section goes here.</p>
+          <DevInput
+            type="text"
+            labelName="Search"
+            variant="base"
+            placeholder="Search Results"
+            icon={<FiSearch />}
+          />
+          {/* Add more content to test scrolling */}
+          <div className="">Scrollable Left Content</div>
+        </div>
+
+        {/* Middle Section */}
+        <div className="w-1/2 bg-white h-full overflow-y-auto p-4">
+          <h2 className="font-bold text-lg mb-4">Middle Section</h2>
+          <p>Main conversation content goes here.</p>
+          {/* Add more content to test scrolling */}
+          <div className="h-[3000px]">Scrollable Middle Content</div>
+          
+        </div>
+
+        {/* Right Section */}
+        <div className="w-1/4 bg-gray-100 h-full overflow-y-auto p-4">
+          <h2 className="font-bold text-lg mb-4">Right Section</h2>
+          <p>Content for the right section goes here.</p>
+          {/* Add more content to test scrolling */}
+          <div className="h-[2000px]">Scrollable Right Content</div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Conversation
