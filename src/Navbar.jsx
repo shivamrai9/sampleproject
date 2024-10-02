@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import cmplogo from '../src/images/brandlogo.svg'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { FaCaretDown } from "react-icons/fa";
 import { FaGithub } from 'react-icons/fa'
 import { FaUserCircle } from "react-icons/fa";
 import SearchModal from './componants/SearchModal';
@@ -22,18 +23,13 @@ const GET_LOCATIONS = gql`
 export const Navbar = () => {
 	const { loading, error, data } = useQuery(GET_LOCATIONS);
 
-  
+
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const navigate = useNavigate()
 
 	const toggleMenu = () => {
 		setMenuOpen(!isMenuOpen);
 	};
-
-	// const closeMenu = () => {
-	// 	setMenuOpen(false);
-	// };
-
 
 	function navLogin() {
 		if (!localStorage.getItem('authToken')) { navigate('/login') }
@@ -42,12 +38,12 @@ export const Navbar = () => {
 
 	const handleLogout = () => {
 		localStorage.removeItem("authToken");
-		// navigate('/login');
+		navigate('/login');
 	}
 
 
 	const navLinks = [
-		{ name: "Chatbot", path: "/chatbot" },
+		{ name: "Chatbot", path: "chatbot/analytics" },
 		{ name: "Account", path: "/account" },
 		{ name: "Subscription", path: "/subscription" },
 	];
@@ -58,16 +54,19 @@ export const Navbar = () => {
 	};
 
 	if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+	if (error) return <p>Error : {error.message}</p>;
 
 	return (
 		<>
-			<header className="w-full flex-shrink-0 z-50 backdrop-blur dark:bg-rtlDark bg-gradient-to-r from-pink-500 to-orange-300  border-b border-b-accentNeon/20 flex items-center justify-between p-1 px-2">
-				<div className=" flex items-center text-base  gap-1">
-					<div className='md:hidden'>
 
+
+
+
+			<header className="w-full flex-shrink-0  backdrop-blur dark:bg-rtlDark bg-gradient-to-r from-pink-500 to-orange-300  border-b border-b-accentNeon/20 flex items-center justify-between p-1 px-2">
+				<div className=" flex items-center text-base  gap-1">
+					{/* <div className='md:hidden'>
 						<MobileSidebar />
-					</div>
+					</div> */}
 
 					<Link
 						to="/"
@@ -90,8 +89,65 @@ export const Navbar = () => {
 					</ul>
 				</div>
 
-				<div className="text-accentNeon flex items-center justify-center gap-2">
-						<FaUserCircle className="text-4xl text-white"/>
+				<div className="flex-none">
+					<ul className="menu menu-horizontal px-1 flex items-center text-white">
+						{(localStorage.getItem('authToken')) ?
+							<li>
+								<div className="dropdown py-[1px] px-2" tabIndex="1">
+									<div className="flex justify-center items-center">
+
+										<div className="avatar online placeholder">
+											<div className="bg-neutral-focus text-neutral-content rounded-full">
+												<div className="w-12 rounded-full">
+													<img
+														src="https://lh3.googleusercontent.com/a/ACg8ocJQgh2bjFHx44Jl95LofUQ3arEB_ceySJEJ58Z1to0MKlHVfknI=s96-c"
+														alt="User"
+													/>
+												</div>
+											</div>
+										</div>
+										<span className="ml-1">
+										<FaCaretDown className='text-xl'/>
+										</span>
+									</div>
+									<ul
+										tabIndex="0"
+										className="dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-52 top-[120%] right-[2%] darkSyllabusDropdown darkMenu"
+									>
+										<li>
+											<a href="/shivamrai5476">
+												{/* SVG removed */}
+												Profile
+											</a>
+										</li>
+										<li>
+											<a href="/settings">
+												{/* SVG removed */}
+												Settings
+											</a>
+										</li>
+										<li>
+											<span className="flex items-center">
+												{/* SVG removed */}
+												<p>Light Mode</p>
+											</span>
+										</li>
+										<li>
+											<button onClick={handleLogout}>
+												{/* SVG removed */}
+												Logout
+											</button>
+										</li>
+									</ul>
+								</div>
+							</li>
+							:
+							<li>
+								<NavLink to='/login' className='text-base'>
+									Sign In
+								</NavLink>
+							</li>}
+					</ul>
 				</div>
 			</header>
 			{/* <nav className="w-full flex-shrink-0 z-50 backdrop-blur dark:bg-rtlDark bg-gradient-to-r from-pink-500 to-orange-300  border-b border-b-accentNeon/20 flex items-center justify-between p-1 px-12">
@@ -121,6 +177,8 @@ export const Navbar = () => {
 					</div>
 				</div>
 			</nav> */}
+
+			
 			{/* <div className='w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75  bg-gradient-to-r from-pink-500 to-orange-300'>
 
 				<div className='max-w-7xl mx-auto'>

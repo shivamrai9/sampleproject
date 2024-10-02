@@ -111,13 +111,13 @@ export default function Login() {
 
   let x = {
     backgroundColor: "#8EC5FC",
-    backgroundImage: "linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%)"
+    backgroundImage: "linear-gradient(62deg, rgb(239 114 145) 0%, rgb(255 255 255) 100%)"
   }
   return (
     <>
-      <div className="p-2 h-screen overflow-y-scroll" style={x}>
+      <div className="p-2 h-screen overflow-y-auto" style={x}>
         <form onSubmit={handleSubmit}>
-          <div className="max-w-md m-auto rounded-xl p-6 shadow-lg bg-white">
+          <div className="max-w-md m-auto rounded-xl p-6 shadow-2xl bg-white">
             {/* <div className="m-auto rounded mt-10 w-16 h-16"><img src="" alt="" /></div> */}
             <div className="font-bold text-2xl text-center mt-5 text-gray-800">
               <h1>Log in to your account</h1>
